@@ -76,7 +76,7 @@ with main_tab1:
     if status_filter != "All":
         queue_df = queue_df[queue_df['STATUS'] == status_filter]
 
-    st.dataframe(queue_df, use_container_width=True, hide_index=True)
+    st.dataframe(queue_df, use_container_width=True)
 
     # Approval action
     st.divider()
@@ -219,4 +219,4 @@ with main_tab3:
         FROM SNF_AI_HUB.GOLD.narrative_audit_log
         ORDER BY action_timestamp DESC LIMIT 20
     """).to_pandas()
-    st.dataframe(audit, use_container_width=True, hide_index=True)
+    st.dataframe(audit, use_container_width=True)
